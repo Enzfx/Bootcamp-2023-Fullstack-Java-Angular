@@ -5,19 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/style.css">
     <script src="componentes/CardNesw.js" defer></script>
+    <script src="componentes/TituloDinamico.js" defer></script>
     
     <title>Noticias de Gatos</title>
 </head>
 <body>
+<div class="container">
     <div class="card">
         <div class="left">
-            <span>by Dipper</span>
-            <h1>Dipper o melhor gato</h1>
-            <p>Esse gato é muito carinhoso, e tem uma tara em plástico</p>
+            <span class="autor">by Dipper</span>
+            <h1 class="titulo">Dipper o melhor gato</h1>
+            <p class="conteudo">Esse gato é muito carinhoso, e tem uma tara em plástico</p>
         </div>
-        <img class="Imagem" src="../assets/cat.jpg" alt="Gato">
         <div class="right">
+            <img class="Imagem" src="../assets/cat.jpg" alt="Gato">
+        </div>
     </div>
-    <card-news></card-news>
+</div>
+        <card-news></card-news>
 </body>
 </html>
