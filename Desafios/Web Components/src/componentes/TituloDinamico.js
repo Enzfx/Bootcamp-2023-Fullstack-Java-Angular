@@ -7,3 +7,4 @@ class TituloDinamico extends HTMLElement {
     // Enviar para o shadow DOM
     }
 }
+customElements.define('titulo-dinamico', TituloDinamico);
