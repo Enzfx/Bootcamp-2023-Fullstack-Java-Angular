@@ -76,6 +76,14 @@ Arrays
 /**
  * Classes
  */
+/**
+
+/**
+ * Datar modifiers
+ * public: Acessível de qualquer lugar
+ * private: Acessível apenas dentro da classe
+ * protected: Acessível dentro da classe e em classes que herdam dela
+ */
 class Carro {
     constructor(name, modelo, novo) {
         this.name = name;
@@ -86,5 +94,16 @@ class Carro {
         console.log(`O modelo do carro é: ${this.modelo}`);
     }
 }
+class CarroEletrico extends Carro {
+    constructor(name, modelo, novo, bateria) {
+        super(name, modelo, novo);
+        this.bateria = bateria;
+    }
+    mostrarBateria() {
+        console.log(`A bateria do carro é de ${this.bateria} kWh`);
+    }
+}
+const carroEletrico = new CarroEletrico("Tesla", 2022, true, 75);
 const carro = new Carro("Fusca", 1980, false);
 console.log(carro);
+console.log(carroEletrico);
