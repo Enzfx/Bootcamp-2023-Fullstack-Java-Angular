@@ -6,7 +6,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "start": "npx tsc && node builds/index.js", 
+    "start": "npx tsc && node builds/index.js",
+    "start:dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,6 +15,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.8.3"
   }
 }
