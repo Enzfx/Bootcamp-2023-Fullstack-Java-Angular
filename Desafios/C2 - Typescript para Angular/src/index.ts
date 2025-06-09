@@ -138,6 +138,14 @@
     /**
      * Genrics
      */
-    
+
+    // function concatArray<T>(...itens: T[]): T[] {
+    //     return new Array().concat(...itens);
+    // }
+    // const numeros = concatArray<number[]>([1, 2, 3], [4, 5, 6]);
+    // const letras = concatArray<string[]>(["a", "b"], ["c"]);
+
+    // console.log(numeros);
+    // console.log(letras);
     
 

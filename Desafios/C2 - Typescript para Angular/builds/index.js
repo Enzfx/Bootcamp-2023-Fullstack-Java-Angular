@@ -84,26 +84,43 @@ Arrays
  * private: Acessível apenas dentro da classe
  * protected: Acessível dentro da classe e em classes que herdam dela
  */
-class Carro {
-    constructor(name, modelo, novo) {
-        this.name = name;
-        this.modelo = modelo;
-        this.novo = novo;
-    }
-    modelodoCarro() {
-        console.log(`O modelo do carro é: ${this.modelo}`);
-    }
+// class Carro{
+//     name: string;
+//     modelo: number;
+//     novo: boolean;
+//     constructor(name: string, modelo: number, novo: boolean) {
+//         this.name = name;
+//         this.modelo = modelo;
+//         this.novo = novo;
+//     }
+//     modelodoCarro(): void {
+//         console.log(`O modelo do carro é: ${this.modelo}`);
+//     }
+// }
+// Subclasse CarroEletrico que herda de Carro
+// class CarroEletrico extends Carro {
+//     bateria: number;
+//     constructor(name: string, modelo: number, novo: boolean, bateria: number) {
+//         super(name, modelo, novo);
+//         this.bateria = bateria;
+//     }
+//     mostrarBateria(): void {
+//         console.log(`A bateria do carro é de ${this.bateria} kWh`);
+//     }
+// }
+// const carroEletrico = new CarroEletrico("Tesla", 2022, true, 75);
+// const carro = new Carro("Fusca", 1980, false);
+// console.log(carro);
+// console.log(carroEletrico);
+/**
+ * Genrics
+ */
+function concatArray(...itens) {
+    return new Array().concat(...itens);
 }
-class CarroEletrico extends Carro {
-    constructor(name, modelo, novo, bateria) {
-        super(name, modelo, novo);
-        this.bateria = bateria;
-    }
-    mostrarBateria() {
-        console.log(`A bateria do carro é de ${this.bateria} kWh`);
-    }
-}
-const carroEletrico = new CarroEletrico("Tesla", 2022, true, 75);
-const carro = new Carro("Fusca", 1980, false);
-console.log(carro);
-console.log(carroEletrico);
+const numeros = concatArray([1, 2, 3], [4, 5, 6]);
+const letras = concatArray(["a", "b"], ["c"]);
+numeros.push([7]);
+letras.push(["d"]);
+console.log(numeros);
+console.log(letras);
