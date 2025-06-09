@@ -3,27 +3,11 @@
     box-sizing: border-box;
     font-family:'Segoe UI',sans-serif;
 }
-.card {
+body {
+    min-height: 100vh;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-.left{
-    margin: 100px;
-}
-h1 {
-    color: #333;
-    margin-top: 17px;
-}
-p {
-    color: #666;
-    margin-top: 10px;
-}
-
-.Imagem {
-    width: 200px;
-    height: 250px;
+    margin: 0;
+    background: #f5f5f5;
 }
