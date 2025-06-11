@@ -182,11 +182,11 @@ function minlength(length:number){
     }
 }
 class Api {
-    @minlength(3)
+    @minlength(5)
     name: string;
     constructor(name: string) {
         this.name = name;
     }
 }
-const api = new Api("Api");
+const api = new Api("ApiTeste");
 console.log(api.name);
