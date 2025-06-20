@@ -1,0 +1,22 @@
+<ng-content select="h1"></ng-content>
+<ng-content select="p"></ng-content>
+
+
+
+<input [(ngModel)]="item" placeholder="Add item" />
+<button (click)="adicionarLista()">Add</button>
+<p>{{ item }}</p>
+<ul>
+    <li *ngFor="let elemento of lista"> {{ elemento }} </li>
+</ul>
+
+<hr>
+
+<ng-template [ngIf]="isEnableBlock">
+<a href="#" > Finalizar Compra! </a>
+</ng-template>
+<br>
+<ng-template [ngIf]="true">
+<a href="#"> Adicionar ao carrinho! </a>
+</ng-template>    
+<
