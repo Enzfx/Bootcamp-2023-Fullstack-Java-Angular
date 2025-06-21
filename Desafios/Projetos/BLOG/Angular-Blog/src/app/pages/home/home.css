@@ -1,3 +1,78 @@
-.Articles-Main-container {
+.Articles-container {
     margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px; /* Ajuste conforme desejar */
+}
+
+.Articles-Main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0; /* Garante que não há margem extra */
+    padding: 0;
+    max-width: 450px; /* Ajuste conforme o tamanho do seu big card */
+}
+
+.Articles-Others-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    margin: 0; /* Garante que não há margem extra */
+    padding: 0;
+    max-width: 700px; /* Ajuste conforme o tamanho dos seus small cards */
+}
+
+@media (max-width: 800px) {
+    .Articles-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100vw;
+        box-sizing: border-box;
+    }
+    .Articles-Main-container,
+    .Articles-Others-container {
+        width: 100%;
+        align-items: center;
+    }
+    .menu-title h1, 
+    h1 {
+        font-size: 2.5rem;
+        text-align: center;
+        word-break: break-word;
+        width: 100%;
+        margin: 20px 0 10px 0;
+    }
+}
+
+/* Para garantir que os cards ocupem toda a largura em telas médias */
+@media (max-width: 800px) {
+    .container-big-card,
+    .container-small-card {
+        width: 95vw !important;
+        max-width: 95vw !important;
+        margin: 0 auto 15px auto;
+        box-sizing: border-box;
+    }
+    .small-card-photo img,
+    .big-card-photo img {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100vw;
+        height: auto;
+    }
+    .small-card-content {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .small-card-title {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
 }

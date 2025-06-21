@@ -5,7 +5,8 @@
     justify-content: flex-start;
     flex-direction: column;
     align-items: flex-start;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     height: 500px;
 
 }
@@ -20,7 +21,7 @@
 }
 .big-card-photo img {
     width: 100%;
-    min-width: 400px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 5px;
 }
+

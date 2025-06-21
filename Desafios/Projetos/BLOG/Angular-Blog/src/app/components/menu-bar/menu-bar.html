@@ -1,1 +1,28 @@
-<p>menu-bar works!</p>
+<button class="menu-hamburger" (click)="toggleSidebar()" [class.open]="sidebarOpen">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+<div class="container-menu-bar" [class.open]="sidebarOpen">
+    <div class="menu-bar">
+        <div class="menu-bar-logo">
+            <a href="">
+                <img src="green-swirl-portal.png" alt="Logo" height="50px">
+            </a>
+        </div>
+        <div class="menu-bar-links">
+            <a href="https://github.com/Enzfx" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/enzfrx/" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin"></i> Linkedin
+            </a>
+            <a href="https://www.instagram.com/enzfrx/" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://x.com/enzfsz" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-x-twitter"></i> Twitter
+            </a>
+        </div>
+    </div>
+</div>
