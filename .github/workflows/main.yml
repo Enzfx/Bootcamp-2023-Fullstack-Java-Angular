@@ -31,7 +31,6 @@ jobs:
 
       - name: Add .nojekyll
         run: touch docs/.nojekyll
-        working-directory: Desafios/Projetos/BLOG/Angular-Blog
 
       - name: Commit and push changes
         run: |
