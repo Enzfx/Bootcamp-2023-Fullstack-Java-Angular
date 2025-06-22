@@ -26,8 +26,13 @@ jobs:
         working-directory: Desafios/Projetos/BLOG/Angular-Blog
 
       - name: Build Angular app
-        run: npx ng build --output-path ../../../docs --base-href /Bootcamp-2023-Fullstack-Java-Angular/
+        run: npx ng build --output-path ../../../../docs --base-href /Bootcamp-2023-Fullstack-Java-Angular/
         working-directory: Desafios/Projetos/BLOG/Angular-Blog
+
+      - name: Move build files to docs root
+        run: |
+          mv docs/browser/* docs/
+          rmdir docs/browser
 
       - name: Add .nojekyll
         run: touch docs/.nojekyll
