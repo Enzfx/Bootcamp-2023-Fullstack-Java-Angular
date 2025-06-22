@@ -20,12 +20,15 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: Desafios/Projetos/BLOG/Angular-Blog
 
       - name: Build Angular app
         run: npx ng build --output-path docs --base-href /Bootcamp-2023-Fullstack-Java-Angular/
+        working-directory: Desafios/Projetos/BLOG/Angular-Blog
 
       - name: Add .nojekyll
         run: touch docs/.nojekyll
+        working-directory: Desafios/Projetos/BLOG/Angular-Blog
 
       - name: Commit and push changes
         run: |
@@ -34,3 +37,4 @@ jobs:
           git add docs
           git commit -m "Deploy Angular app to GitHub Pages" || echo "No changes to commit"
           git push
+        working-directory: Desafios/Projetos/BLOG/Angular-Blog
