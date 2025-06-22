@@ -34,3 +34,5 @@ jobs:
           git add docs
           git commit -m "Deploy Angular app to GitHub Pages" || echo "No changes to commit"
           git push
+
+          // Test if the push was successful
