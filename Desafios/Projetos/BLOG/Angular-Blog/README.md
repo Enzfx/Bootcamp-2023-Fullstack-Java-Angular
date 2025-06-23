@@ -1,52 +1,107 @@
-# AngularBlog
+<div align="center">
+  <a href="">
+    <img src="public/estrela.png" alt="Logo do Projeto" width="150px"/>
+  </a>
+</div>
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.2.
+# 🚀 Angular Blog
 
-## Development server
+## 🌍 Sobre o Projeto
 
-To start a local development server, run:
+O **Angular Blog** é um projeto de blog pessoal desenvolvido em Angular, com foco em componentização, responsividade e navegação dinâmica. Ele permite a publicação de artigos, notícias ou portfólio, sendo ideal para quem deseja praticar ou demonstrar habilidades com Angular.
 
-```bash
-ng serve
+---
+
+## 🔧 Funcionalidades
+
+- **Página Inicial:** Exibe um card principal em destaque e outros artigos em formato de lista.
+- **Navegação Dinâmica:** Clique em qualquer card para acessar o conteúdo completo do artigo.
+- **Menu Responsivo:** Barra de navegação lateral adaptável para dispositivos móveis, com links para redes sociais.
+- **Componentização:** Estrutura baseada em componentes reutilizáveis para fácil manutenção e expansão.
+- **Estilização Responsiva:** Layout adaptado para diferentes tamanhos de tela.
+- **Dados Simulados:** Os artigos são carregados a partir de um arquivo de dados fake, facilitando testes e desenvolvimento.
+
+---
+
+## 👀 Demonstração
+
+![Demonstração do Blog](https://i.imgur.com/z3KjMjL.jpeg)
+
+---
+
+## 📁 Estrutura de Pastas
+
+```
+pages/
+  home/
+  content/
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 📃 Documentação dos Componentes
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- [`MenuBarComponent`](src/app/components/menu-bar/menu-bar.ts): Barra de navegação com links para redes sociais e menu responsivo.
+- [`BigCard`](src/app/components/big-card/big-card.ts): Card principal em destaque na home.
+- [`SmallCard`](src/app/components/small-card/small-card.ts): Cards menores para outros artigos.
+- [`MenuTitle`](src/app/components/menu-title/menu-title.ts): Título de apresentação na página inicial.
+- [`Home`](src/app/pages/home/home.ts): Página inicial que organiza os cards.
+- [`Content`](src/app/pages/content/content.ts): Página de exibição do conteúdo completo do artigo selecionado.
 
-```bash
-ng generate component component-name
+---
+
+## 💡 Como Executar o Projeto
+
+1. **Clone o repositório:**
+   ```sh
+   git clone https://github.com/seu-usuario/angular-blog.git
+   cd angular-blog
+   ```
+2. Instale as dependências:
+   ```sh
+   npm install
+   ```
+3. Inicie o servidor de desenvolvimento:
+   ```sh
+   npm start
+   ```
+
+O projeto estará disponível em http://localhost:4200/.
+
+---
+
+## 🛠️ Como Adicionar Novos Artigos
+
+Edite o arquivo dataFake.ts e adicione um novo objeto ao array:
+
+```ts
+{
+  "id": "3",
+  "title": "Novo Artigo",
+  "description": "Descrição do artigo...",
+  "photoCover": "URL_da_imagem"
+}
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 👨‍💻 Tecnologias Utilizadas
 
-## Building
+* Angular 20+
+* TypeScript
+* HTML5 & CSS3
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## 🌐 Visualização Online
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Você pode visualizar a página do projeto acessando:  
+[https://enzfx.github.io/Bootcamp-2023-Fullstack-Java-Angular/](https://enzfx.github.io/Bootcamp-2023-Fullstack-Java-Angular/)
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+> Projeto desenvolvido para fins de estudo e portfólio pessoal.
 
-```bash
-ng e2e
-```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
-## Additional Resources
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-.....
