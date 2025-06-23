@@ -4,7 +4,7 @@ import { Component, Input, OnInit } from '@angular/core';
   selector: 'app-big-card',
   imports: [],
   templateUrl: './big-card.html',
-  styleUrl: './big-card.css'
+  styleUrls: ['./big-card.css']
 })
 export class BigCard implements OnInit {
   @Input()
