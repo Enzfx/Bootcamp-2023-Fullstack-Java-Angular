@@ -1,18 +1,13 @@
 <div class="container-big-card">
-    <a href="">
+    <a [href]="cardLink">
     <div class="big-card-photo">
-        <img
-            src=" {{photoCover}} "
-            alt=""
-            srcset=""
-            height="200px"
-        >
+        <img [src]="photoCover" alt="Capa do Card" height="200px">
     </div>
     <div class="big-card-title">
-        <h1> {{cardTitle}} </h1>
+        <h1>{{cardTitle}}</h1>
     </div>
     <div class="big-card-description">
-        <p> {{cardDescription}} </p>
+        <p>{{cardDescription}}</p>
     </div>
     </a>
 </div>
