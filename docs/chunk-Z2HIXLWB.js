@@ -1,0 +1,1 @@
+import{Da as s,na as n,ya as o,za as a}from"./chunk-KFE7D466.js";var c=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=n({type:t,selectors:[["app-content"]],decls:2,vars:0,template:function(e,p){e&1&&(o(0,"p"),s(1,"content works!"),a())},encapsulation:2})};export{c as Content};
