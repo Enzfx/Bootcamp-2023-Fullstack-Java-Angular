@@ -1,11 +1,12 @@
 <div class="container-content">
     <div class="content-cover">
-        <img src="" alt="Content Cover Image">
+        <img src="{{ PhotoCover }}" alt="">
     </div>
     <div class="content-title">
-        <h1>Content Title</h1>
+        <h1>{{contentTitle}}</h1>
     </div>
     <div class="content-description">
-        <p></p>
+        <a [routerLink]="['']"> << VOLTAR </a>
+        <p>{{contentDescription}}</p>
     </div>
 </div>
