@@ -9,6 +9,6 @@ export const dataFake = [
     "id": "2",
     "title": "Car", 
     "description": "jsgojopjgpojojgjohjgohoghiohrho4",
-    "photoCover": "https://imgur.com/cd6940eb-c9c9-43c2-b1db-359246b615a4"
+    "photoCover": "https://i.imgur.com/ETfHyr0.png"
   }
 ]
