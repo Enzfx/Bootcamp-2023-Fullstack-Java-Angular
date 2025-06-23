@@ -6,7 +6,7 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/home/home').then(m => m.Home)
     },
     {
-        path: 'content',
+        path: 'content/:id',
         loadComponent: () => import('./pages/content/content').then(m => m.Content)
     }
 ];

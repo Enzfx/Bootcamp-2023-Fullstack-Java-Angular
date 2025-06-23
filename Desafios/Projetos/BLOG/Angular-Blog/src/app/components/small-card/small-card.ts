@@ -1,8 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-small-card',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './small-card.html',
   styleUrl: './small-card.css'
 })
@@ -13,6 +14,8 @@ export class SmallCard implements OnInit {
   photoCover: string = '';
   @Input()
   cardTitle: string = '';
+  @Input()
+  Id: string = "0";
 
   ngOnInit(): void {
     // Initialization logic can go here if needed
