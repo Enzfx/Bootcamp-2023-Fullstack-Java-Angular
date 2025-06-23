@@ -1,16 +1,11 @@
 <div class="container-small-card">
     <div class="small-card-content">
         <div class="small-card-photo">
-            <img
-                src="abril.jpg"
-                alt=""
-                srcset=""
-                height="100px"
-            >
+            <img [src]="photoCover" alt="capa do card" height="100px" >
     </div>
     <div class="small-card-title">
-        <a href="https://www.instagram.com/p/DJHDRR8uzZx/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">
-            <h1>Retrospective of April</h1>
+        <a [href]="cardLink">
+            <h1>{{cardTitle}}</h1>
         </a>
     </div>
 </div>

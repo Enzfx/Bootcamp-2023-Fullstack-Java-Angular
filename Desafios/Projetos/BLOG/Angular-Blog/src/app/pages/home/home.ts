@@ -12,5 +12,4 @@ import { MenuBarComponent } from "../../components/menu-bar/menu-bar";
   styleUrl: './home.css'
 })
 export class Home {
-
 }
