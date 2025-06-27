@@ -9,22 +9,17 @@ public class Unarios {
     // para tornar positivo o numero, basta multiplicar por -1
     numero = numero *-1;
     System.out.println(numero);
-
-    // numero = + numero;
-    // numero ++;
-    // System.out.println(numero);
-
-
-    // System.out.println(numero ++);// ops algo de errado não está certo
-
-    // System.out.println(numero);// agora sim, numero virou 7
-
-
-    // System.out.println(++ numero);
-
-    // boolean verdadeiro = true;
-
-    // System.out.println("Inverteu " + !verdadeiro);
-    // }
+    // para incrementar o numero, basta somar 1
+    // numero = numero + 1; ou numero++;
+    numero ++;
+    System.out.println(numero);
+    // para decrementar o numero, basta subtrair 1
+    // numero = numero - 1; ou numero--;
+    numero --;
+    System.out.println(numero);
+    // operador unario de negação
+    // o operador unario de negação inverte o valor booleano
+    boolean verdadeiro = true;
+    System.out.println("Inverteu:" + !verdadeiro);
     }
 }
