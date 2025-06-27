@@ -102,9 +102,10 @@ Este repositório contém todos os exercícios, projetos e estudos realizados du
 - **Funcionalidades**: Catálogo de jogos, cards interativos, design responsivo
 
 ### 🐾 Pokédex
-- **Tecnologia**: JavaScript Vanilla + API REST
-- **Descrição**: Enciclopédia Pokémon interativa
-- **Funcionalidades**: Busca de pokémons, exibição de informações, consumo de API
+- **Tecnologia**: JavaScript Vanilla + HTML5 + CSS3
+- **Descrição**: Interface visual da Pokédex com os primeiros Pokémon da 1ª geração
+- **Funcionalidades**: Cards interativos, exibição de tipos, consumo de PokeAPI, design responsivo
+- **Demonstração**: Visualização completa dos 10 primeiros Pokémon com suas características
 
 ## 🏃‍♂️ Como Executar os Projetos
 

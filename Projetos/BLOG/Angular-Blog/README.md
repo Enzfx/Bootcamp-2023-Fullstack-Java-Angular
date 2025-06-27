@@ -95,8 +95,24 @@ Edite o arquivo dataFake.ts e adicione um novo objeto ao array:
 
 ## 🌐 Visualização Online
 
-Você pode visualizar a página do projeto acessando:  
-[https://enzfx.github.io/Bootcamp-2023-Fullstack-Java-Angular/](https://enzfx.github.io/Bootcamp-2023-Fullstack-Java-Angular/)
+🔗 **Deploy**: [https://enzfx.github.io/Bootcamp-2023-Fullstack-Java-Angular/](https://enzfx.github.io/Bootcamp-2023-Fullstack-Java-Angular/)
+
+## 📞 Contato
+
+- **GitHub**: [Seu GitHub](https://github.com/seu-usuario)
+- **LinkedIn**: [Seu LinkedIn](https://linkedin.com/in/seu-perfil)
+- **Email**: [seu.email@exemplo.com](mailto:seu.email@exemplo.com)
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
+
+<div align="center">
+  <p>⭐ Se este projeto foi útil para você, considere dar uma estrela!</p>
+  <p>Desenvolvido com ❤️ como parte do Bootcamp DIO</p>
+</div>
 
 ---
 

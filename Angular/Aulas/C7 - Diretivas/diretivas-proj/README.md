@@ -1,59 +1,409 @@
-# DiretivasProj
+<div align="center">
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.2.
+![Angular Logo](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-## Development server
+# 🎯 C7 - Diretivas Angular
 
-To start a local development server, run:
+**Explorando Diretivas: Estruturais, de Atributo e Customizadas**
 
-```bash
-ng serve
+</div>
+
+## 📋 Sobre o Projeto
+
+Este projeto faz parte da **Aula 7** do **Bootcamp Fullstack Java + Angular** da [DIO](https://dio.me), explorando o poder das **Diretivas** no Angular - instruções especiais que estendem o comportamento de elementos HTML.
+
+## 🎯 Objetivos de Aprendizado
+
+- ✅ Compreender os tipos de diretivas no Angular
+- ✅ Utilizar diretivas estruturais (*ngIf, *ngFor, *ngSwitch)
+- ✅ Aplicar diretivas de atributo (ngClass, ngStyle)
+- ✅ Criar diretivas customizadas
+- ✅ Implementar lógica avançada com diretivas
+
+## 📚 Tipos de Diretivas
+
+### 1. 🏗️ **Diretivas Estruturais**
+Modificam a estrutura do DOM adicionando, removendo ou manipulando elementos.
+
+#### *ngIf - Renderização Condicional
+```html
+<!-- Sintaxe básica -->
+<div *ngIf="isVisible">Conteúdo visível</div>
+
+<!-- Com else -->
+<div *ngIf="user; else noUser">
+  Bem-vindo, {{ user.name }}!
+</div>
+<ng-template #noUser>
+  <p>Usuário não encontrado</p>
+</ng-template>
+
+<!-- Com then/else -->
+<div *ngIf="isLoading; then loading; else content"></div>
+<ng-template #loading>Carregando...</ng-template>
+<ng-template #content>Conteúdo carregado!</ng-template>
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+#### *ngFor - Iteração de Listas
+```html
+<!-- Sintaxe básica -->
+<li *ngFor="let item of items">{{ item.name }}</li>
 
-## Code scaffolding
+<!-- Com index e propriedades especiais -->
+<li *ngFor="let item of items; let i = index; let isFirst = first; let isLast = last">
+  {{ i + 1 }}. {{ item.name }}
+  <span *ngIf="isFirst">(Primeiro)</span>
+  <span *ngIf="isLast">(Último)</span>
+</li>
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+<!-- Com trackBy para performance -->
+<li *ngFor="let item of items; trackBy: trackByFn">
+  {{ item.name }}
+</li>
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
+#### *ngSwitch - Múltiplas Condições
+```html
+<div [ngSwitch]="userRole">
+  <p *ngSwitchCase="'admin'">Painel do Administrador</p>
+  <p *ngSwitchCase="'user'">Área do Usuário</p>
+  <p *ngSwitchCase="'guest'">Área do Visitante</p>
+  <p *ngSwitchDefault>Acesso Negado</p>
+</div>
 ```
 
-## Building
+### 2. 🎨 **Diretivas de Atributo**
+Modificam a aparência ou comportamento de elementos existentes.
 
-To build the project run:
+#### ngClass - Classes Dinâmicas
+```html
+<!-- Objeto -->
+<div [ngClass]="{
+  'active': isActive,
+  'disabled': isDisabled,
+  'highlight': isHighlighted
+}">Elemento</div>
 
-```bash
-ng build
+<!-- Array -->
+<div [ngClass]="['class1', 'class2', conditionalClass]">Elemento</div>
+
+<!-- String -->
+<div [ngClass]="'class1 class2'">Elemento</div>
+
+<!-- Método -->
+<div [ngClass]="getClasses()">Elemento</div>
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+#### ngStyle - Estilos Dinâmicos
+```html
+<!-- Objeto -->
+<div [ngStyle]="{
+  'color': textColor,
+  'font-size': fontSize + 'px',
+  'background-color': isHighlighted ? 'yellow' : 'transparent'
+}">Texto estilizado</div>
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+<!-- Propriedade única -->
+<div [style.color]="textColor">Texto colorido</div>
+<div [style.font-size.px]="fontSize">Texto dimensionado</div>
 ```
 
-## Running end-to-end tests
+### 3. 🔧 **Diretivas Customizadas**
 
-For end-to-end (e2e) testing, run:
+#### Diretiva de Atributo Personalizada
+```typescript
+@Directive({
+  selector: '[appHighlight]'
+})
+export class HighlightDirective {
+  @Input() appHighlight: string = 'yellow';
+  @Input() defaultColor: string = 'transparent';
 
-```bash
-ng e2e
+  constructor(private el: ElementRef, private renderer: Renderer2) {}
+
+  @HostListener('mouseenter') onMouseEnter() {
+    this.highlight(this.appHighlight);
+  }
+
+  @HostListener('mouseleave') onMouseLeave() {
+    this.highlight(this.defaultColor);
+  }
+
+  private highlight(color: string) {
+    this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', color);
+  }
+}
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+#### Uso da Diretiva Customizada
+```html
+<p appHighlight="lightblue">Passe o mouse aqui!</p>
+<p [appHighlight]="'lightgreen'" defaultColor="white">Outro exemplo</p>
+```
 
-## Additional Resources
+## 📁 Estrutura do Projeto
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```
+src/
+├── app/
+│   ├── directives/                # Diretivas customizadas
+│   │   ├── highlight.directive.ts # Diretiva de destaque
+│   │   ├── click-stop.directive.ts# Parar propagação
+│   │   └── auto-focus.directive.ts# Auto focus
+│   ├── components/
+│   │   ├── structural-demo/       # Demo diretivas estruturais
+│   │   ├── attribute-demo/        # Demo diretivas de atributo
+│   │   └── custom-demo/           # Demo diretivas customizadas
+│   ├── app.component.ts           # Componente raiz
+│   └── app.config.ts              # Configurações
+├── styles.css                     # Estilos globais
+└── main.ts                        # Bootstrapping
+```
+
+## 🧪 Exemplos Práticos
+
+### Componente com Diretivas Estruturais
+```typescript
+@Component({
+  selector: 'app-structural-demo',
+  template: `
+    <div>
+      <h2>Lista de Usuários</h2>
+      
+      <!-- ngIf -->
+      <div *ngIf="isLoading; else usersList">
+        Carregando usuários...
+      </div>
+      
+      <ng-template #usersList>
+        <!-- ngFor -->
+        <div *ngFor="let user of users; let i = index; trackBy: trackByUserId">
+          <div class="user-card">
+            <h3>{{ user.name }}</h3>
+            <p>{{ user.email }}</p>
+            
+            <!-- ngSwitch -->
+            <span [ngSwitch]="user.status">
+              <span *ngSwitchCase="'active'" class="status-active">Ativo</span>
+              <span *ngSwitchCase="'inactive'" class="status-inactive">Inativo</span>
+              <span *ngSwitchDefault class="status-unknown">Desconhecido</span>
+            </span>
+          </div>
+        </div>
+      </ng-template>
+      
+      <!-- Mensagem quando não há usuários -->
+      <div *ngIf="users.length === 0 && !isLoading">
+        Nenhum usuário encontrado.
+      </div>
+    </div>
+  `
+})
+export class StructuralDemoComponent {
+  users: User[] = [];
+  isLoading = true;
+  
+  trackByUserId(index: number, user: User): number {
+    return user.id;
+  }
+}
+```
+
+### Componente com Diretivas de Atributo
+```typescript
+@Component({
+  selector: 'app-attribute-demo',
+  template: `
+    <div>
+      <h2>Demonstração de Estilos Dinâmicos</h2>
+      
+      <!-- ngClass -->
+      <div [ngClass]="{
+        'card': true,
+        'card-highlighted': isHighlighted,
+        'card-disabled': isDisabled
+      }">
+        <h3>Card Dinâmico</h3>
+        <p>Estado atual: {{ getCurrentState() }}</p>
+      </div>
+      
+      <!-- ngStyle -->
+      <div [ngStyle]="{
+        'background-color': backgroundColor,
+        'color': textColor,
+        'padding': padding + 'px',
+        'border-radius': borderRadius + 'px'
+      }">
+        <p>Elemento com estilos dinâmicos</p>
+      </div>
+      
+      <!-- Controles -->
+      <div class="controls">
+        <button (click)="toggleHighlight()">Toggle Highlight</button>
+        <button (click)="toggleDisabled()">Toggle Disabled</button>
+        <input type="color" [(ngModel)]="backgroundColor" placeholder="Cor de fundo">
+        <input type="color" [(ngModel)]="textColor" placeholder="Cor do texto">
+      </div>
+    </div>
+  `
+})
+export class AttributeDemoComponent {
+  isHighlighted = false;
+  isDisabled = false;
+  backgroundColor = '#f0f0f0';
+  textColor = '#333333';
+  padding = 20;
+  borderRadius = 8;
+  
+  toggleHighlight() {
+    this.isHighlighted = !this.isHighlighted;
+  }
+  
+  toggleDisabled() {
+    this.isDisabled = !this.isDisabled;
+  }
+  
+  getCurrentState(): string {
+    if (this.isDisabled) return 'Desabilitado';
+    if (this.isHighlighted) return 'Destacado';
+    return 'Normal';
+  }
+}
+```
+
+### Diretivas Customizadas Avançadas
+
+#### Diretiva Click Outside
+```typescript
+@Directive({
+  selector: '[appClickOutside]'
+})
+export class ClickOutsideDirective {
+  @Output() clickOutside = new EventEmitter<void>();
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: Event) {
+    if (!this.el.nativeElement.contains(event.target)) {
+      this.clickOutside.emit();
+    }
+  }
+
+  constructor(private el: ElementRef) {}
+}
+```
+
+#### Diretiva Auto Focus
+```typescript
+@Directive({
+  selector: '[appAutoFocus]'
+})
+export class AutoFocusDirective implements AfterViewInit {
+  @Input() appAutoFocus: boolean = true;
+
+  constructor(private el: ElementRef) {}
+
+  ngAfterViewInit() {
+    if (this.appAutoFocus) {
+      setTimeout(() => {
+        this.el.nativeElement.focus();
+      }, 0);
+    }
+  }
+}
+```
+
+## 🚀 Como Executar
+
+### Pré-requisitos
+- **Node.js** (versão 18 ou superior)
+- **Angular CLI** (versão 20 ou superior)
+
+### Instalação e Execução
+
+1. **Navegue até o diretório:**
+   ```bash
+   cd "Angular/Aulas/C7 - Diretivas/diretivas-proj"
+   ```
+
+2. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
+
+3. **Execute o servidor de desenvolvimento:**
+   ```bash
+   ng serve
+   ```
+
+4. **Acesse a aplicação:**
+   ```
+   http://localhost:4200
+   ```
+
+## ⚡ Boas Práticas
+
+### 1. **Performance com *ngFor**
+```typescript
+// ✅ Use trackBy para melhor performance
+trackByFn(index: number, item: any): any {
+  return item.id; // ou index se não houver id único
+}
+```
+
+### 2. **Evitar Expressões Complexas**
+```html
+<!-- ❌ Evitar -->
+<div *ngIf="users.filter(u => u.active).length > 0">
+
+<!-- ✅ Preferir -->
+<div *ngIf="hasActiveUsers">
+```
+
+### 3. **Diretivas Customizadas**
+```typescript
+// ✅ Use Renderer2 para manipulação de DOM
+constructor(private renderer: Renderer2, private el: ElementRef) {}
+
+private setStyle(property: string, value: string) {
+  this.renderer.setStyle(this.el.nativeElement, property, value);
+}
+```
+
+## 🔧 Scripts Disponíveis
+
+```bash
+ng serve                 # Servidor de desenvolvimento
+ng build                # Build de produção
+ng test                 # Testes unitários
+ng lint                 # Análise de código
+
+# Gerar diretiva
+ng generate directive nome-da-diretiva
+```
+
+## 📈 Próximos Passos
+
+- [ ] Diretivas com parâmetros múltiplos
+- [ ] Testing de diretivas customizadas
+- [ ] Performance optimization
+- [ ] Accessibility em diretivas
+- [ ] Diretivas para formulários
+
+## 📖 Recursos Adicionais
+
+- [📚 Angular Directives](https://angular.io/guide/attribute-directives)
+- [🏗️ Structural Directives](https://angular.io/guide/structural-directives)
+- [🧪 Testing Directives](https://angular.io/guide/testing-attribute-directives)
+
+## 📞 Contato
+
+- **GitHub**: [Seu GitHub](https://github.com/seu-usuario)
+- **LinkedIn**: [Seu LinkedIn](https://linkedin.com/in/seu-perfil)
+
+---
+
+<div align="center">
+  <p>⭐ Dominando as diretivas do Angular!</p>
+  <p>Desenvolvido como parte do Bootcamp DIO</p>
+</div>
